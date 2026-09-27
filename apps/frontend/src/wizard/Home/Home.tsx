@@ -92,6 +92,11 @@ export function HomeScreen({ stage, setStage }: HomeScreenProps): JSX.Element {
       setTheme(getCardThemeDefault(isDark, CATEGORY_BY_CARD_TYPE[cardType]));
     }
 
+    setCardOptions((prev) => ({
+      ...prev,
+      enableAnimations: cardType !== CardType.PIN,
+    }));
+
     setSelectedCard(cardType);
     // Go to the next stage
     setStage(2);
