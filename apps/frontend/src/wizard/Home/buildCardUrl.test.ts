@@ -83,6 +83,17 @@ describe("buildCardUrl", () => {
     );
   });
 
+  it("adds disable_animations to the pin card", () => {
+    const result = buildCardUrl(USER_ID, CardType.PIN, {
+      ...baseOptions,
+      enableAnimations: false,
+    });
+
+    expect(result.toString()).toBe(
+      "/pin?username=john-github&repo=repo1&disable_animations=true",
+    );
+  });
+
   it("builds gist suffix", () => {
     const result = buildCardUrl(USER_ID, CardType.GIST, {
       ...baseOptions,

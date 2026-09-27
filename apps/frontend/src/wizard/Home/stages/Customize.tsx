@@ -361,6 +361,7 @@ export function CustomizeStage({
         )}
         {(cardType === CardType.STATS ||
           cardType === CardType.TOP_LANGS ||
+          cardType === CardType.PIN ||
           cardType === CardType.WAKATIME) && (
           <CheckboxSection
             title="Enable Animations?"
