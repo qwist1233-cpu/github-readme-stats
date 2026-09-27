@@ -74,6 +74,7 @@ describe("buildCardUrl", () => {
   it("builds pin suffix using userId not selectedUserId", () => {
     const result = buildCardUrl(USER_ID, CardType.PIN, {
       ...baseOptions,
+      enableAnimations: false,
       showOwner: true,
       descriptionLines: 3,
     });
@@ -86,11 +87,11 @@ describe("buildCardUrl", () => {
   it("adds disable_animations to the pin card", () => {
     const result = buildCardUrl(USER_ID, CardType.PIN, {
       ...baseOptions,
-      enableAnimations: false,
+      enableAnimations: true,
     });
 
     expect(result.toString()).toBe(
-      "/pin?username=john-github&repo=repo1&disable_animations=true",
+      "/pin?username=john-github&repo=repo1&disable_animations=false",
     );
   });
 

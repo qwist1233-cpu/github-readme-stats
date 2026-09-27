@@ -124,8 +124,8 @@ export function buildCardUrl(
       if (descriptionLines) {
         url = url.descriptionLines(descriptionLines);
       }
-      if (!enableAnimations) {
-        url = url.disableAnimations();
+      if (enableAnimations) {
+        url = url.disableAnimations(false);
       }
       return url;
     }

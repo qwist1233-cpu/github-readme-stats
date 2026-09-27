@@ -119,7 +119,7 @@ const renderRepoCard = (
     border_radius,
     locale,
     description_lines_count,
-    disable_animations = false,
+    disable_animations = true,
   } = options;
 
   const card_width =

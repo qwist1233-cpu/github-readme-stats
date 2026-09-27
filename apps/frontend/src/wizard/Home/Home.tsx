@@ -49,7 +49,7 @@ export function HomeScreen({ stage, setStage }: HomeScreenProps): JSX.Element {
 
   // for stages two and three
   const [cardOptions, setCardOptions] = useState(() =>
-    getDefaultCardOptions(userId),
+    getDefaultCardOptions(userId, selectedCard),
   );
 
   const setCardOption = useCallback<

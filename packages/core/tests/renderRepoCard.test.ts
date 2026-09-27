@@ -407,20 +407,20 @@ describe("Test renderRepoCard", () => {
     expect(document.querySelector("svg")).toHaveAttribute("height", "120");
   });
 
-  it("should not disable animations by default", () => {
+  it("should disable animations by default", () => {
     document.body.innerHTML = renderRepoCard(data_repo.repository);
 
     const styles = document.querySelector("style")?.textContent ?? "";
-    expect(styles).not.toContain("animation-duration: 0s !important");
+    expect(styles).toContain("animation-duration: 0s !important");
   });
 
-  it("should disable animations when disable_animations is true", () => {
+  it("should not disable animations when disable_animations is false", () => {
     document.body.innerHTML = renderRepoCard(data_repo.repository, {
-      disable_animations: true,
+      disable_animations: false,
     });
 
     const styles = document.querySelector("style")?.textContent ?? "";
-    expect(styles).toContain("animation-duration: 0s !important");
+    expect(styles).not.toContain("animation-duration: 0s !important");
   });
 });
 
